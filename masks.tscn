@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://xahnqrv6jmle"]
+
+[ext_resource type="Script" path="res://Masks.cs" id="1_pmcoj"]
+
+[node name="Masks" type="HBoxContainer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -35.0
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_pmcoj")
+
+[node name="Mask0" type="RichTextLabel" parent="." groups=["Masks"]]
+custom_minimum_size = Vector2(58, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Mask1" type="RichTextLabel" parent="." groups=["Masks"]]
+custom_minimum_size = Vector2(58, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Mask2" type="RichTextLabel" parent="." groups=["Masks"]]
+custom_minimum_size = Vector2(58, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Mask3" type="RichTextLabel" parent="." groups=["Masks"]]
+custom_minimum_size = Vector2(58, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Mask4" type="RichTextLabel" parent="." groups=["Masks"]]
+custom_minimum_size = Vector2(58, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
