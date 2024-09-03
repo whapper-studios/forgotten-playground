@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://xahnqrv6jmle"]
 
 [ext_resource type="Script" path="res://Masks.cs" id="1_pmcoj"]
-[ext_resource type="Texture2D" uid="uid://bm0e4ang2rl17" path="res://MaskBreaking.png" id="2_0b4c8"]
+[ext_resource type="Texture2D" uid="uid://bm0e4ang2rl17" path="res://assets/MaskBreaking.png" id="2_0b4c8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6uo32"]
 atlas = ExtResource("2_0b4c8")
@@ -101,6 +101,7 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
+"output_section": true,
 "slice_section": false
 }
 metadata/_aseprite_wizard_source_file_hash_ = "13fb4052ca554217f7bd0df163f01bdc"
