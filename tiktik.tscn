@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cannxw47bfu5m"]
+[gd_scene load_steps=8 format=3 uid="uid://d1trbb2wfs62p"]
 
 [ext_resource type="Script" path="res://Tiktik.cs" id="1_8cf3d"]
 [ext_resource type="Texture2D" uid="uid://bkqm7ecvlamm4" path="res://Tiktik - Running.png" id="2_cceps"]
@@ -39,13 +39,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Tiktik" type="CharacterBody2D" node_paths=PackedStringArray("Back", "Front", "running", "timer")]
+[node name="Tiktik" type="CharacterBody2D" node_paths=PackedStringArray("Back", "Front", "running")]
 collision_layer = 2
 script = ExtResource("1_8cf3d")
 Back = NodePath("AnimatedSprite2D/Back")
 Front = NodePath("AnimatedSprite2D/Front")
 running = NodePath("AnimatedSprite2D")
-timer = NodePath("Timer")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(2, -30)
@@ -64,7 +63,3 @@ target_position = Vector2(0, 44)
 [node name="Front" type="RayCast2D" parent="AnimatedSprite2D"]
 position = Vector2(25, 0)
 target_position = Vector2(0, 44)
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.139
-one_shot = true

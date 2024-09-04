@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmb1lep65tdwk"]
+[gd_scene load_steps=4 format=3 uid="uid://67pgr2w0o3k7"]
 
-[ext_resource type="PackedScene" uid="uid://cannxw47bfu5m" path="res://tiktik.tscn" id="1_ilx2m"]
+[ext_resource type="PackedScene" uid="uid://d1trbb2wfs62p" path="res://tiktik.tscn" id="1_ilx2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_es4n2"]
 size = Vector2(200, 200)
@@ -19,6 +19,6 @@ shape = SubResource("RectangleShape2D_es4n2")
 mesh = SubResource("QuadMesh_qgvf2")
 
 [node name="Tiktik" parent="." instance=ExtResource("1_ilx2m")]
-position = Vector2(49, -109)
+position = Vector2(-53, -185)
 
 [node name="Camera2D" type="Camera2D" parent="."]
