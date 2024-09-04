@@ -28,39 +28,19 @@ public partial class Tiktik : CharacterBody2D
     }
     public override void _PhysicsProcess(double delta)
 	{
-		if(timer.IsStopped()){
-			//GD.Print("happening");
-			// Vector2 velocity = Velocity;
-			// Vector2 basis = Transform.BasisXform(Velocity);
-			// Vector2 forward = new Vector2(Mathf.Abs(Mathf.Cos(Rotation)), Mathf.Abs(Mathf.Sin(Rotation)));
-			GD.Print(Velocity);
-			GD.Print(this.Position);
- 
-			// Add the gravity.
-			// if (!IsOnFloor())
-			// {
-			// 	velocity += GetGravity() * (float)delta;
-			// }
-
-			// Get the input direction and handle the movement/deceleration.
-			// As good practice, you should replace UI actions with custom gameplay actions.
-			// if(start == true)
-			// {
-			// 	GD.Print(Velocity);
-			// }
+		if(timer.IsStopped())
+		{
 			if(!isRotating)
 			{
-				if((Back.IsColliding() || Front.IsColliding()))
+				if(Back.IsColliding() || Front.IsColliding())
 				{
 					Move();
-					GD.Print("happening");
 				}
 				else
 				{
 					shouldRotate = true;
 				}
 			}
-			
 			if(shouldRotate)
 			{
 				isRotating = true;
@@ -90,7 +70,6 @@ public partial class Tiktik : CharacterBody2D
 
 	private void Rotate()
 	{
-		GD.Print("rotating");
 		this.RotationDegrees += 7.5f;
 		num++;
 	}
