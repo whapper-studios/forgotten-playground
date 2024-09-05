@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b03wno464ptmt"
-path="res://.godot/imported/Tiktik.png-8305459deecdb36ab26b980a71052ccd.ctex"
+uid="uid://fqk5wqnm2e2s"
+path="res://.godot/imported/HollowKnightSprite.png-2e6eb497f50b9443258b9eec58a02777.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiktik.png"
-dest_files=["res://.godot/imported/Tiktik.png-8305459deecdb36ab26b980a71052ccd.ctex"]
+source_file="res://assets/Sprites/Character/HollowKnightSprite.png"
+dest_files=["res://.godot/imported/HollowKnightSprite.png-2e6eb497f50b9443258b9eec58a02777.ctex"]
 
 [params]
 

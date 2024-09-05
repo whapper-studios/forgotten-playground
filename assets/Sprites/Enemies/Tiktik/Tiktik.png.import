@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cso3wdiaji061"
-path="res://.godot/imported/MockCharacter.png-c30b965ad43fe0ab789a54530c8b54e7.ctex"
+uid="uid://b03wno464ptmt"
+path="res://.godot/imported/Tiktik.png-a56f58e8bb746c0aa435335e2e2cd194.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/MockCharacter.png"
-dest_files=["res://.godot/imported/MockCharacter.png-c30b965ad43fe0ab789a54530c8b54e7.ctex"]
+source_file="res://assets/Sprites/Enemies/Tiktik/Tiktik.png"
+dest_files=["res://.godot/imported/Tiktik.png-a56f58e8bb746c0aa435335e2e2cd194.ctex"]
 
 [params]
 
