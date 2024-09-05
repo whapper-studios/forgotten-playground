@@ -1,0 +1,191 @@
+[gd_scene load_steps=12 format=3 uid="uid://bbnu6nsarlf1c"]
+
+[ext_resource type="Script" path="res://Masks.cs" id="1_pmcoj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_370q8"]
+load_path = "res://.godot/imported/MaskBreaking.png-49041f6de9ab9bcbc1b134a73f33edde.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i8n2"]
+atlas = SubResource("CompressedTexture2D_370q8")
+region = Rect2(0, 0, 90, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5pss"]
+atlas = SubResource("CompressedTexture2D_370q8")
+region = Rect2(90, 0, 90, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv3ty"]
+atlas = SubResource("CompressedTexture2D_370q8")
+region = Rect2(180, 0, 90, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27rjd"]
+atlas = SubResource("CompressedTexture2D_370q8")
+region = Rect2(0, 160, 90, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhiir"]
+atlas = SubResource("CompressedTexture2D_370q8")
+region = Rect2(90, 160, 90, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rif6"]
+atlas = SubResource("CompressedTexture2D_370q8")
+region = Rect2(180, 160, 90, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ykyj"]
+atlas = SubResource("CompressedTexture2D_370q8")
+region = Rect2(0, 320, 90, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_be33g"]
+atlas = SubResource("CompressedTexture2D_370q8")
+region = Rect2(90, 320, 90, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2k0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i8n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5pss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv3ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27rjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhiir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rif6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ykyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_be33g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Masks" type="HBoxContainer"]
+offset_right = 360.0
+offset_bottom = 60.0
+script = ExtResource("1_pmcoj")
+
+[node name="CenterContainer1" type="CenterContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer1"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_d2k0s")
+centered = false
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/MaskBreaking.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "13fb4052ca554217f7bd0df163f01bdc"
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer2"]
+texture_filter = 1
+animation = &"MaskBreak"
+centered = false
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/MaskBreaking.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "13fb4052ca554217f7bd0df163f01bdc"
+
+[node name="CenterContainer3" type="CenterContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer3"]
+texture_filter = 1
+animation = &"MaskBreak"
+centered = false
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/MaskBreaking.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "13fb4052ca554217f7bd0df163f01bdc"
+
+[node name="CenterContainer4" type="CenterContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer4"]
+texture_filter = 1
+animation = &"MaskBreak"
+centered = false
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/MaskBreaking.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "13fb4052ca554217f7bd0df163f01bdc"
+
+[node name="CenterContainer5" type="CenterContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer5"]
+texture_filter = 1
+animation = &"MaskBreak"
+centered = false
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/MaskBreaking.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "13fb4052ca554217f7bd0df163f01bdc"
