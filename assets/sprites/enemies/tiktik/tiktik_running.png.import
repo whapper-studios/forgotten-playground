@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b03wno464ptmt"
-path="res://.godot/imported/tiktik.png-0e897b16397022d57f935081180795e3.ctex"
+uid="uid://bkqm7ecvlamm4"
+path="res://.godot/imported/tiktik_running.png-a4a66110f54396a87cd02a45b5ab5f43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/tiktik/tiktik.png"
-dest_files=["res://.godot/imported/tiktik.png-0e897b16397022d57f935081180795e3.ctex"]
+source_file="res://assets/sprites/enemies/tiktik/tiktik_running.png"
+dest_files=["res://.godot/imported/tiktik_running.png-a4a66110f54396a87cd02a45b5ab5f43.ctex"]
 
 [params]
 

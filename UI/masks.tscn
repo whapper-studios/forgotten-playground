@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://xahnqrv6jmle"]
 
 [ext_resource type="Script" path="res://Masks.cs" id="1_pmcoj"]
-[ext_resource type="Texture2D" uid="uid://bm0e4ang2rl17" path="res://Assets/Sprites/UI/MaskBreaking.png" id="2_0b4c8"]
+[ext_resource type="Texture2D" uid="uid://bm0e4ang2rl17" path="res://assets/sprites/ui/mask_breaking.png" id="2_0b4c8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6uo32"]
 atlas = ExtResource("2_0b4c8")
