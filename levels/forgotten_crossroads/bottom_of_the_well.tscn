@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://xmklt63xrivo"]
 
-[ext_resource type="Texture2D" uid="uid://cso3wdiaji061" path="res://Assets/Sprites/MockCharacter.png" id="1_7xdnl"]
+[ext_resource type="Texture2D" uid="uid://cso3wdiaji061" path="res://assets/sprites/character/mock_character.png" id="1_cqyfy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vg107"]
 size = Vector2(1415, 450)
@@ -144,7 +144,7 @@ position = Vector2(0, -89)
 shape = SubResource("RectangleShape2D_53t1n")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("1_7xdnl")
+texture = ExtResource("1_cqyfy")
 
 [node name="Floor" type="Node2D" parent="."]
 
