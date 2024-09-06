@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://lj75c4fw6nkc"]
+[gd_scene load_steps=2 format=3 uid="uid://ca2rlc4rodfnn"]
 
-[node name="main" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://xmklt63xrivo" path="res://Levels/Forgotten Crossroads/bottom_of_the_well.tscn" id="2_yudyv"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Bottom of the Well" parent="." instance=ExtResource("2_yudyv")]
