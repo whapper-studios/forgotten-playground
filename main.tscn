@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ca2rlc4rodfnn"]
+[gd_scene load_steps=3 format=3 uid="uid://ca2rlc4rodfnn"]
 
 [ext_resource type="PackedScene" uid="uid://xmklt63xrivo" path="res://Levels/Forgotten Crossroads/bottom_of_the_well.tscn" id="1_md8yt"]
+[ext_resource type="PackedScene" uid="uid://bdoq4iigy3ukq" path="res://Characters/TheKnight/the_knight.tscn" id="2_wc5qt"]
 
 [node name="main" type="Node2D"]
 
 [node name="Bottom of the Well" parent="." instance=ExtResource("1_md8yt")]
+
+[node name="TheKnight" parent="." instance=ExtResource("2_wc5qt")]
