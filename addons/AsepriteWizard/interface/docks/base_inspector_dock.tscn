@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://ljeu0l1ld6v5"]
 
-[ext_resource type="Script" path="res://addons/AsepriteWizard/interface/docks/base_inspector_dock.gd" id="1_0bpq8"]
-[ext_resource type="PackedScene" uid="uid://x1f1t87m582u" path="res://addons/AsepriteWizard/interface/shared/animation_player_drop_button.tscn" id="2_pge1b"]
-[ext_resource type="PackedScene" uid="uid://dj1uo3blocr8e" path="res://addons/AsepriteWizard/interface/shared/source_drop_button.tscn" id="3_nt1oj"]
-[ext_resource type="PackedScene" uid="uid://cwvgnm3o7eed2" path="res://addons/AsepriteWizard/interface/shared/dir_drop_button.tscn" id="4_r7t2l"]
+[ext_resource type="Script" path="res://Addons/AsepriteWizard/interface/docks/base_inspector_dock.gd" id="1_0bpq8"]
+[ext_resource type="PackedScene" uid="uid://x1f1t87m582u" path="res://Addons/AsepriteWizard/interface/shared/animation_player_drop_button.tscn" id="2_pge1b"]
+[ext_resource type="PackedScene" uid="uid://dj1uo3blocr8e" path="res://Addons/AsepriteWizard/interface/shared/source_drop_button.tscn" id="3_nt1oj"]
+[ext_resource type="PackedScene" uid="uid://cwvgnm3o7eed2" path="res://Addons/AsepriteWizard/interface/shared/dir_drop_button.tscn" id="4_r7t2l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6usu"]
 content_margin_left = 4.0
