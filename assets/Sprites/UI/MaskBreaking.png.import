@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm0e4ang2rl17"
-path="res://.godot/imported/MaskBreaking.png-3ad5e80ea23914b272594ee524e39abb.ctex"
+path="res://.godot/imported/MaskBreaking.png-50ee7868dfc0d534012feb410311e0c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MaskBreaking.png"
-dest_files=["res://.godot/imported/MaskBreaking.png-3ad5e80ea23914b272594ee524e39abb.ctex"]
+source_file="res://Assets/Sprites/UI/MaskBreaking.png"
+dest_files=["res://.godot/imported/MaskBreaking.png-50ee7868dfc0d534012feb410311e0c7.ctex"]
 
 [params]
 

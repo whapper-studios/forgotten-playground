@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fqk5wqnm2e2s"
-path="res://.godot/imported/HollowKnightSprite.png-cdace4ff90556953fcde508653660d21.ctex"
+path="res://.godot/imported/HollowKnightSprite.png-24ec669b095ad9d71a60908e64baaded.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/HollowKnightSprite.png"
-dest_files=["res://.godot/imported/HollowKnightSprite.png-cdace4ff90556953fcde508653660d21.ctex"]
+source_file="res://Assets/Sprites/Character/HollowKnightSprite.png"
+dest_files=["res://.godot/imported/HollowKnightSprite.png-24ec669b095ad9d71a60908e64baaded.ctex"]
 
 [params]
 
