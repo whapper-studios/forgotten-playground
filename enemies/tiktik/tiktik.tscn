@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://d1trbb2wfs62p"]
 
-[ext_resource type="Script" path="res://enemies_temp/tiktik/Tiktik.cs" id="1_8cf3d"]
+[ext_resource type="Script" path="res://enemies/tiktik/Tiktik.cs" id="1_8cf3d"]
 [ext_resource type="Texture2D" uid="uid://bkqm7ecvlamm4" path="res://assets/sprites/enemies/tiktik/tiktik_running.png" id="2_cceps"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wphis"]
