@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b03wno464ptmt"
-path="res://.godot/imported/Tiktik.png-8305459deecdb36ab26b980a71052ccd.ctex"
+uid="uid://b6hpidwh81val"
+path="res://.godot/imported/mask.png-0de522fc15fbf44468a09dbabb7b20f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiktik.png"
-dest_files=["res://.godot/imported/Tiktik.png-8305459deecdb36ab26b980a71052ccd.ctex"]
+source_file="res://assets/sprites/ui/mask.png"
+dest_files=["res://.godot/imported/mask.png-0de522fc15fbf44468a09dbabb7b20f1.ctex"]
 
 [params]
 
