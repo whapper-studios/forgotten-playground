@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fqk5wqnm2e2s"
-path="res://.godot/imported/hollow_knight_sprite.png-e4a83b92bfae0e0ae45d8e6bfc17fc6e.ctex"
+uid="uid://c0hpsbviwl6yy"
+path="res://.godot/imported/idle.png-ab4f82141a5e320fba60cbe72b4a0996.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/character/hollow_knight_sprite.png"
-dest_files=["res://.godot/imported/hollow_knight_sprite.png-e4a83b92bfae0e0ae45d8e6bfc17fc6e.ctex"]
+source_file="res://assets/sprites/character/idle.png"
+dest_files=["res://.godot/imported/idle.png-ab4f82141a5e320fba60cbe72b4a0996.ctex"]
 
 [params]
 
