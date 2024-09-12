@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1trbb2wfs62p"]
+
+[ext_resource type="Script" path="res://enemies/tiktik/Tiktik.cs" id="1_8cf3d"]
+[ext_resource type="Texture2D" uid="uid://bkqm7ecvlamm4" path="res://assets/sprites/enemies/tiktik/tiktik_running.png" id="2_cceps"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wphis"]
+atlas = ExtResource("2_cceps")
+region = Rect2(0, 0, 95, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lm7d"]
+atlas = ExtResource("2_cceps")
+region = Rect2(95, 0, 95, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pawle"]
+atlas = ExtResource("2_cceps")
+region = Rect2(190, 0, 95, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbc6l"]
+atlas = ExtResource("2_cceps")
+region = Rect2(285, 0, 95, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b02do"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wphis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lm7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pawle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbc6l")
+}],
+"loop": true,
+"name": &"Running",
+"speed": 10.0
+}]
+
+[node name="Tiktik" type="CharacterBody2D" node_paths=PackedStringArray("Back", "Front", "running")]
+collision_layer = 2
+script = ExtResource("1_8cf3d")
+Back = NodePath("AnimatedSprite2D/Back")
+Front = NodePath("AnimatedSprite2D/Front")
+running = NodePath("AnimatedSprite2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2, -30)
+polygon = PackedVector2Array(41, 24, 27, 38, 1, 38, -22, 38, -43, 10, -30, -26, 2, -37, 26, -32, 39, -14)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -30)
+sprite_frames = SubResource("SpriteFrames_b02do")
+animation = &"Running"
+
+[node name="Back" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(-11, 0)
+target_position = Vector2(0, 44)
+
+[node name="Front" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(25, 0)
+target_position = Vector2(0, 44)
