@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4pyd27cwb0r6"
-path="res://.godot/imported/walljump_puff.png-a4da30cfafa83b91f1a4586738ef0fb6.ctex"
+uid="uid://5dthnq2siu66"
+path="res://.godot/imported/walljump_puff.png-7f6a968883bbcf3d77300057cd0dc929.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/character/walljump_puff.png"
-dest_files=["res://.godot/imported/walljump_puff.png-a4da30cfafa83b91f1a4586738ef0fb6.ctex"]
+source_file="res://assets/sprites/character/effects/walljump_puff.png"
+dest_files=["res://.godot/imported/walljump_puff.png-7f6a968883bbcf3d77300057cd0dc929.ctex"]
 
 [params]
 
