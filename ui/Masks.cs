@@ -20,7 +20,6 @@ public partial class Masks : HBoxContainer
 	// Called when HK is hit by an enemy, and triggers short animation of mask breaking.
 	public void RemoveMask()
 	{
-		GetNode<AnimatedSprite2D>($"CenterContainer{currentMasks}/AnimatedSprite2D").Play(Name="MaskBreak");
 		currentMasks -= 1;
 	}
 
