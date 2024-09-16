@@ -1,15 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://xahnqrv6jmle"]
+[gd_scene load_steps=8 format=3 uid="uid://xahnqrv6jmle"]
 
 [ext_resource type="Script" path="res://ui/Masks.cs" id="1_6eky8"]
 [ext_resource type="Texture2D" uid="uid://bm0e4ang2rl17" path="res://assets/MaskBreaking.png" id="2_0b4c8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r3q3o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq7f4"]
 atlas = ExtResource("2_0b4c8")
-region = Rect2(0, 0, 80, 145)
+region = Rect2(0, 0, 90, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4wwh7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddxwn"]
 atlas = ExtResource("2_0b4c8")
-region = Rect2(0, 0, 90, 145)
+region = Rect2(0, 0, 90, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46xb3"]
+atlas = ExtResource("2_0b4c8")
+region = Rect2(0, 0, 90, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beinp"]
+atlas = ExtResource("2_0b4c8")
+region = Rect2(0, 0, 90, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgqwl"]
+atlas = ExtResource("2_0b4c8")
+region = Rect2(0, 0, 90, 160)
 
 [node name="Masks" type="HBoxContainer"]
 anchors_preset = 6
@@ -30,7 +42,7 @@ size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer1"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_r3q3o")
+texture = SubResource("AtlasTexture_wq7f4")
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -56,7 +68,7 @@ size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer2"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_4wwh7")
+texture = SubResource("AtlasTexture_ddxwn")
 
 [node name="CenterContainer3" type="CenterContainer" parent="."]
 layout_mode = 2
@@ -64,6 +76,7 @@ size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer3"]
 layout_mode = 2
+texture = SubResource("AtlasTexture_46xb3")
 
 [node name="CenterContainer4" type="CenterContainer" parent="."]
 layout_mode = 2
@@ -71,6 +84,7 @@ size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer4"]
 layout_mode = 2
+texture = SubResource("AtlasTexture_beinp")
 
 [node name="CenterContainer5" type="CenterContainer" parent="."]
 layout_mode = 2
@@ -78,3 +92,4 @@ size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer5"]
 layout_mode = 2
+texture = SubResource("AtlasTexture_jgqwl")

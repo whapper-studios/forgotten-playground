@@ -20,13 +20,15 @@ public partial class Masks : HBoxContainer
 	// Called when HK is hit by an enemy, and triggers short animation of mask breaking.
 	public void RemoveMask()
 	{
-		currentMasks -= 1;
+		AtlasTexture maskToHeal = (AtlasTexture)GetNode<TextureRect>($"CenterContainer{currentMasks}/TextureRect").GetTexture();
+		AtlasAnimator.NextFrame(maskToHeal);
 	}
 
+	// Called when HK heals, and triggers short animation of mask healing. 
 	private void AddMask()
 	{
 		currentMasks += 1;
-		GetNode<AnimatedSprite2D>($"CenterContainer{currentMasks}/AnimatedSprite2D").PlayBackwards(Name="MaskBreak");
+		
 	}
 
     public override void _GuiInput(InputEvent @event)
