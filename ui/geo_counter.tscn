@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://gp81uc6lq8xq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08dmc"]
+load_path = "res://.godot/imported/GeoIcon.png-efc4cfb3b2e674b06baf7e40ef60fe06.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00wwj"]
+atlas = SubResource("CompressedTexture2D_08dmc")
+region = Rect2(0, 0, 60, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6yk6"]
+atlas = SubResource("CompressedTexture2D_08dmc")
+region = Rect2(60, 0, 60, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68ben"]
+atlas = SubResource("CompressedTexture2D_08dmc")
+region = Rect2(0, 58, 60, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uni8i"]
+atlas = SubResource("CompressedTexture2D_08dmc")
+region = Rect2(60, 58, 60, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_thh2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00wwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6yk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68ben")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uni8i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GeoCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 120.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/CenterContainer2"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_thh2j")
+centered = false
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets/sprites/ui",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/sprites/ui/GeoIcon.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c00e0e277cc25e828aabd1727a505443"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/CenterContainer2"]
+layout_mode = 2

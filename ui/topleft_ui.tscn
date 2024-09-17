@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ijche5nons0n"]
 
-[ext_resource type="PackedScene" uid="uid://bbnu6nsarlf1c" path="res://masks.tscn" id="1_w2ppt"]
-[ext_resource type="Texture2D" uid="uid://c5f2pykyqiyao" path="res://assets/GeoIcon.png" id="2_qkov2"]
+[ext_resource type="PackedScene" uid="uid://xahnqrv6jmle" path="res://ui/masks.tscn" id="1_w2ppt"]
+[ext_resource type="Texture2D" uid="uid://c5f2pykyqiyao" path="res://assets/sprites/ui/GeoIcon.png" id="2_qkov2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3118n"]
 atlas = ExtResource("2_qkov2")
@@ -55,10 +55,10 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 50
 
 [node name="GeoIcon" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer"]
-texture_filter = 1
-position = Vector2(0, -4)
+position = Vector2(60, 17)
 sprite_frames = SubResource("SpriteFrames_rkjqk")
 centered = false
 metadata/_aseprite_wizard_config_ = {
@@ -79,5 +79,6 @@ metadata/_aseprite_wizard_source_file_hash_ = "c00e0e277cc25e828aabd1727a505443"
 
 [node name="GeoCount" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 bbcode_enabled = true
 text = "0"
