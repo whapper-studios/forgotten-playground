@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://gp81uc6lq8xq"]
+[gd_scene load_steps=8 format=3 uid="uid://gp81uc6lq8xq"]
+
+[ext_resource type="Script" path="res://ui/GeoCounter.cs" id="1_n7brp"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08dmc"]
 load_path = "res://.godot/imported/GeoIcon.png-efc4cfb3b2e674b06baf7e40ef60fe06.ctex"
@@ -44,6 +46,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 120.0
 offset_bottom = 120.0
+script = ExtResource("1_n7brp")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -58,15 +61,15 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/CenterContainer2"]
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
 
-[node name="GeoIcon" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/CenterContainer2/Control"]
+[node name="GeoIcon" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/CenterContainer/Control"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_thh2j")
 metadata/_aseprite_wizard_config_ = {
@@ -89,6 +92,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="PlusSign" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -126,4 +130,10 @@ size_flags_vertical = 3
 [node name="AddedGeo" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2/CenterContainer2"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-text = "20"
+text = "0"
+
+[node name="Timer" type="Timer" parent="HBoxContainer/VBoxContainer2/CenterContainer2/AddedGeo"]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="HBoxContainer/VBoxContainer2/CenterContainer2/AddedGeo/Timer" to="." method="OnTimerTimeout"]
