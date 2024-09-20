@@ -1,68 +1,194 @@
-[gd_scene load_steps=12 format=3 uid="uid://xahnqrv6jmle"]
+[gd_scene load_steps=16 format=3 uid="uid://xahnqrv6jmle"]
 
 [ext_resource type="Script" path="res://ui/Masks.cs" id="1_pmcoj"]
+[ext_resource type="Texture2D" uid="uid://bmpidqj4mhfyr" path="res://assets/sprites/ui/MaskBreaking.png" id="2_rpdf8"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ykh3"]
-load_path = "res://.godot/imported/MaskBreaking.png-49041f6de9ab9bcbc1b134a73f33edde.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6uo32"]
-atlas = SubResource("CompressedTexture2D_1ykh3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd7bx"]
+atlas = ExtResource("2_rpdf8")
 region = Rect2(0, 0, 90, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jpu6w"]
-atlas = SubResource("CompressedTexture2D_1ykh3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_re8g5"]
+atlas = ExtResource("2_rpdf8")
 region = Rect2(90, 0, 90, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hgk08"]
-atlas = SubResource("CompressedTexture2D_1ykh3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewfit"]
+atlas = ExtResource("2_rpdf8")
 region = Rect2(180, 0, 90, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_trdhs"]
-atlas = SubResource("CompressedTexture2D_1ykh3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4ovc"]
+atlas = ExtResource("2_rpdf8")
 region = Rect2(0, 160, 90, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gl8yy"]
-atlas = SubResource("CompressedTexture2D_1ykh3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_akpbn"]
+atlas = ExtResource("2_rpdf8")
 region = Rect2(90, 160, 90, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vxi82"]
-atlas = SubResource("CompressedTexture2D_1ykh3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_osaq2"]
+atlas = ExtResource("2_rpdf8")
 region = Rect2(180, 160, 90, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7yp51"]
-atlas = SubResource("CompressedTexture2D_1ykh3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib7mn"]
+atlas = ExtResource("2_rpdf8")
 region = Rect2(0, 320, 90, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ismuk"]
-atlas = SubResource("CompressedTexture2D_1ykh3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dodk"]
+atlas = ExtResource("2_rpdf8")
 region = Rect2(90, 320, 90, 160)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4vkal"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mtp5o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6uo32")
+"texture": SubResource("AtlasTexture_qd7bx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jpu6w")
+"texture": SubResource("AtlasTexture_re8g5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hgk08")
+"texture": SubResource("AtlasTexture_ewfit")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_trdhs")
+"texture": SubResource("AtlasTexture_g4ovc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gl8yy")
+"texture": SubResource("AtlasTexture_akpbn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vxi82")
+"texture": SubResource("AtlasTexture_osaq2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7yp51")
+"texture": SubResource("AtlasTexture_ib7mn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ismuk")
+"texture": SubResource("AtlasTexture_2dodk")
+}],
+"loop": false,
+"name": &"MaskBreak",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_frqm3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd7bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re8g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewfit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4ovc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akpbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osaq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib7mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dodk")
+}],
+"loop": false,
+"name": &"MaskBreak",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bl428"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd7bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re8g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewfit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4ovc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akpbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osaq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib7mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dodk")
+}],
+"loop": false,
+"name": &"MaskBreak",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx0ii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd7bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re8g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewfit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4ovc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akpbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osaq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib7mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dodk")
+}],
+"loop": false,
+"name": &"MaskBreak",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_beqkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd7bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re8g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewfit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4ovc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akpbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osaq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib7mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dodk")
 }],
 "loop": false,
 "name": &"MaskBreak",
@@ -89,16 +215,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer1"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_mtp5o")
 animation = &"MaskBreak"
 centered = false
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
-"o_folder": "",
+"o_folder": "res://assets/sprites/ui",
 "o_name": "",
 "only_visible": false,
 "slice": "",
-"source": "res://assets/MaskBreaking.aseprite"
+"source": "res://assets/sprites/ui/MaskBreaking.aseprite"
 }
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
@@ -112,20 +240,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer2"]
-sprite_frames = SubResource("SpriteFrames_4vkal")
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_frqm3")
 animation = &"MaskBreak"
 centered = false
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
-"o_folder": "",
+"o_folder": "res://assets/sprites/ui",
 "o_name": "",
 "only_visible": false,
 "slice": "",
-"source": "res://assets/MaskBreaking.aseprite"
+"source": "res://assets/sprites/ui/MaskBreaking.aseprite"
 }
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
+"output_section": true,
 "slice_section": false
 }
 metadata/_aseprite_wizard_source_file_hash_ = "13fb4052ca554217f7bd0df163f01bdc"
@@ -135,20 +265,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer3"]
-sprite_frames = SubResource("SpriteFrames_4vkal")
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_bl428")
 animation = &"MaskBreak"
 centered = false
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
-"o_folder": "",
+"o_folder": "res://assets/sprites/ui",
 "o_name": "",
 "only_visible": false,
 "slice": "",
-"source": "res://assets/MaskBreaking.aseprite"
+"source": "res://assets/sprites/ui/MaskBreaking.aseprite"
 }
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
+"output_section": true,
 "slice_section": false
 }
 metadata/_aseprite_wizard_source_file_hash_ = "13fb4052ca554217f7bd0df163f01bdc"
@@ -158,20 +290,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer4"]
-sprite_frames = SubResource("SpriteFrames_4vkal")
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_nx0ii")
 animation = &"MaskBreak"
 centered = false
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
-"o_folder": "",
+"o_folder": "res://assets/sprites/ui",
 "o_name": "",
 "only_visible": false,
 "slice": "",
-"source": "res://assets/MaskBreaking.aseprite"
+"source": "res://assets/sprites/ui/MaskBreaking.aseprite"
 }
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
+"output_section": true,
 "slice_section": false
 }
 metadata/_aseprite_wizard_source_file_hash_ = "13fb4052ca554217f7bd0df163f01bdc"
@@ -181,20 +315,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer5"]
-sprite_frames = SubResource("SpriteFrames_4vkal")
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_beqkm")
 animation = &"MaskBreak"
 centered = false
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
-"o_folder": "",
+"o_folder": "res://assets/sprites/ui",
 "o_name": "",
 "only_visible": false,
 "slice": "",
-"source": "res://assets/MaskBreaking.aseprite"
+"source": "res://assets/sprites/ui/MaskBreaking.aseprite"
 }
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
+"output_section": true,
 "slice_section": false
 }
 metadata/_aseprite_wizard_source_file_hash_ = "13fb4052ca554217f7bd0df163f01bdc"
