@@ -52,22 +52,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/CenterContainer"]
-layout_mode = 2
-
-[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/CenterContainer2"]
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/CenterContainer2"]
+layout_mode = 2
+
+[node name="GeoIcon" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/CenterContainer2/Control"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_thh2j")
-centered = false
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
@@ -83,5 +84,46 @@ metadata/_aseprite_wizard_interface_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "c00e0e277cc25e828aabd1727a505443"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/CenterContainer2"]
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlusSign" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[center]+[/center]"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CurrentGeo" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2/CenterContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "0"
+
+[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AddedGeo" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2/CenterContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "20"
