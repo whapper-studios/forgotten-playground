@@ -1,103 +1,97 @@
 using Godot;
 using System;
-using System.Data;
 
 public partial class GeoCounter : Control
 {
-	
+	[Export]
+	public AnimatedSprite2D GeoIcon;
+	[Export]
+	public Label PlusSignLabel;
+	[Export]
+	public Label CurrentGeoLabel;
+	[Export]
+	public Label GeoToAddLabel;
 
-	[Export]
-	public AnimatedSprite2D geoIcon;
-	[Export]
-	public Label plusSign;
-	[Export]
-	public Label currentGeo;
-	[Export]
-	public Label addedGeo;
-
-	private bool isGeoTransferring = false;
-	private int geoAdded = 0;
-	private int geoTotal = 0;
-	private int geoAddChunkSize = 0;
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	private bool IsGeoTransferring = false;
+	private int GeoToAdd = 0;
+	private int CurrentGeo = 0;
+	private int GeoToAddChunkSize = 0;
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		
-		if (isGeoTransferring)
+		if (IsGeoTransferring)
 		{
-			int geoToTransfer = (int)Math.Round(geoAddChunkSize*(delta/1.5));
-			if (geoToTransfer > 0)
+			int geoToTransfer = (int)Math.Round(GeoToAddChunkSize*(delta/1.5));
+			if (geoToTransfer > 0) // There is enough geo stocked up to transfer a nonzero amount per frame
 			{
-				isGeoTransferring = TransferGeo(geoToTransfer);
+				IsGeoTransferring = TransferGeo(geoToTransfer);
 			}
 			else 
 			{
-				isGeoTransferring = TransferGeo(1);
+				IsGeoTransferring = TransferGeo(1);
 			}
-			
 		}
 	}
 
-	// Updates the counter on GeoAdded node, and, after a short time, decreases the GeoAdded count 
-	// while increasing the CurrentGeo count. While the geo is "transferring", plays animation on GeoIcon
+	// Updates the counter on GeoToAddLabel and starts/restarts its child timer node.
 	public void UpdateGeoAdded(int newGeo)
 	{
-		if (geoAdded == 0)
+		if (GeoToAdd == 0)
 		{
-			plusSign.Visible = true;
-			addedGeo.Visible = true;
+			PlusSignLabel.Visible = true;
+			GeoToAddLabel.Visible = true;
 		}
-		addedGeo.Text = (geoAdded+newGeo).ToString();
-		geoAdded += newGeo;
-		addedGeo.GetChild<Timer>(0).Stop();
-		addedGeo.GetChild<Timer>(0).Start();
-		
+		GeoToAddLabel.Text = (GeoToAdd+newGeo).ToString();
+		GeoToAdd += newGeo;
+		GeoToAddLabel.GetChild<Timer>(0).Stop();
+		GeoToAddLabel.GetChild<Timer>(0).Start();
 	}
 
-	public bool TransferGeo(int geo)
+	// Both decreases GeoToAdd and increases CurrentGeo by geoToTransfer and checks
+	// if there is no geo left to transfer, in order to make GeoToAdd and PlusSign invisible
+	// and stop GeoIcon animation. 
+	public bool TransferGeo(int geoToTransfer)
 	{
-		if ((geoAdded-geo)<0)
+		if ((GeoToAdd-geoToTransfer)<0)
 		{
-			addedGeo.Text = "0";
-			currentGeo.Text = (geoTotal+geoAdded).ToString();
-			geoAdded = 0;
-			geoTotal += geoAdded; // Account for possible rounding issue. 
+			GeoToAddLabel.Text = "0";
+			CurrentGeoLabel.Text = (CurrentGeo+GeoToAdd).ToString();
+			GeoToAdd = 0;
+			CurrentGeo += GeoToAdd; // Account for possible rounding issue. 
 		}
 		else 
 		{
-			addedGeo.Text = (geoAdded-geo).ToString();
-			currentGeo.Text = (geoTotal+geo).ToString();
-			geoAdded -= geo;
-			geoTotal += geo;
+			GeoToAddLabel.Text = (GeoToAdd-geoToTransfer).ToString();
+			CurrentGeoLabel.Text = (CurrentGeo+geoToTransfer).ToString();
+			GeoToAdd -= geoToTransfer;
+			CurrentGeo += geoToTransfer;
 		}
 		
-		if (geoAdded > 0)
+		if (GeoToAdd > 0)
 		{
 			return true;
 		}
 		else
 		{
-			plusSign.Visible = false;
-			addedGeo.Visible = false;
-			geoIcon.Stop();
+			PlusSignLabel.Visible = false;
+			GeoToAddLabel.Visible = false;
+			GeoIcon.Stop();
 			return false;
 		} 
 	}
 
+	// When the GeoToAdd Label's child timer times out, start transferring all 
+	// geo in GeoToAdd and play GeoIcon animation.
 	public void OnTimerTimeout()
 	{
-		isGeoTransferring = true;
-		geoAddChunkSize = geoAdded;
-		geoIcon.Play();
+		IsGeoTransferring = true;
+		GeoToAddChunkSize = GeoToAdd;
+		GeoIcon.Play();
 	}
 
 	
-    //
+    // Placeholder to test geo "pickups" with large numbers as well as small. 
     public void OnGuiInput(InputEvent @event)
     {
         if (@event.IsActionPressed("select"))

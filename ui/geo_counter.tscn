@@ -40,16 +40,16 @@ animations = [{
 "speed": 13.3
 }]
 
-[node name="GeoCounter" type="Control" node_paths=PackedStringArray("geoIcon", "plusSign", "currentGeo", "addedGeo")]
+[node name="GeoCounter" type="Control" node_paths=PackedStringArray("GeoIcon", "PlusSignLabel", "CurrentGeoLabel", "GeoToAddLabel")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 120.0
 offset_bottom = 120.0
 script = ExtResource("1_n7brp")
-geoIcon = NodePath("HBoxContainer/VBoxContainer/CenterContainer/Control/GeoIcon")
-plusSign = NodePath("HBoxContainer/VBoxContainer/Control/PlusSign")
-currentGeo = NodePath("HBoxContainer/VBoxContainer2/Control/CurrentGeo")
-addedGeo = NodePath("HBoxContainer/VBoxContainer2/Control2/AddedGeo")
+GeoIcon = NodePath("HBoxContainer/VBoxContainer/CenterContainer/Control/GeoIcon")
+PlusSignLabel = NodePath("HBoxContainer/VBoxContainer/Control/PlusSign")
+CurrentGeoLabel = NodePath("HBoxContainer/VBoxContainer2/Control/CurrentGeo")
+GeoToAddLabel = NodePath("HBoxContainer/VBoxContainer2/Control2/GeoToAdd")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -136,7 +136,7 @@ justification_flags = 0
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AddedGeo" type="Label" parent="HBoxContainer/VBoxContainer2/Control2"]
+[node name="GeoToAdd" type="Label" parent="HBoxContainer/VBoxContainer2/Control2"]
 visible = false
 layout_mode = 1
 offset_left = 7.0
@@ -148,9 +148,9 @@ theme_override_font_sizes/font_size = 38
 text = "0"
 justification_flags = 0
 
-[node name="Timer" type="Timer" parent="HBoxContainer/VBoxContainer2/Control2/AddedGeo"]
+[node name="Timer" type="Timer" parent="HBoxContainer/VBoxContainer2/Control2/GeoToAdd"]
 wait_time = 1.5
 one_shot = true
 
 [connection signal="gui_input" from="." to="." method="OnGuiInput"]
-[connection signal="timeout" from="HBoxContainer/VBoxContainer2/Control2/AddedGeo/Timer" to="." method="OnTimerTimeout"]
+[connection signal="timeout" from="HBoxContainer/VBoxContainer2/Control2/GeoToAdd/Timer" to="." method="OnTimerTimeout"]
