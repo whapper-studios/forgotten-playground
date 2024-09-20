@@ -5,6 +5,16 @@ using System.Data;
 public partial class GeoCounter : Control
 {
 	
+
+	[Export]
+	public AnimatedSprite2D geoIcon;
+	[Export]
+	public RichTextLabel plusSign;
+	[Export]
+	public RichTextLabel currentGeo;
+	[Export]
+	public RichTextLabel addedGeo;
+
 	private bool isGeoTransferring = false;
 	private int geoAdded = 0;
 	private int geoTotal = 0;
@@ -24,24 +34,24 @@ public partial class GeoCounter : Control
 	{
 		if (geoAdded == 0)
 		{
-			GetNode<RichTextLabel>("HBoxContainer/VBoxContainer/Control/PlusSign").Visible = true;
+			GD.Print(plusSign);
+			plusSign.Visible = true;
 		}
-		RichTextLabel addedGeoNode = GetNode<RichTextLabel>("HBoxContainer/VBoxContainer2/CenterContainer2/AddedGeo");
-		addedGeoNode.Text = (geoAdded+newGeo).ToString();
+		addedGeo.Text = (geoAdded+newGeo).ToString();
 		geoAdded += newGeo;
-		addedGeoNode.GetChild<Timer>(0).Stop();
-		addedGeoNode.GetChild<Timer>(0).Start();
+		addedGeo.GetChild<Timer>(0).Stop();
+		addedGeo.GetChild<Timer>(0).Start();
 		
 	}
 
 	public void OnTimerTimeout()
 	{
-		GetNode<AnimatedSprite2D>("HBoxContainer/VBoxContainer/CenterContainer/Control/GeoIcon").Play();
+		geoIcon.Play();
 	}
 
 	
     //
-    public override void _GuiInput(InputEvent @event)
+    public void OnGuiInput(InputEvent @event)
     {
         if (@event.IsActionPressed("select"))
 		{
