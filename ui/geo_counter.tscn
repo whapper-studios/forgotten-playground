@@ -2,44 +2,42 @@
 
 [ext_resource type="Script" path="res://ui/GeoCounter.cs" id="1_n7brp"]
 [ext_resource type="FontFile" uid="uid://blx14g382wtdu" path="res://assets/fonts/Trajan Pro Regular.ttf" id="2_fjf6g"]
+[ext_resource type="Texture2D" uid="uid://c5f2pykyqiyao" path="res://assets/sprites/ui/GeoIcon.png" id="2_rqxu2"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08dmc"]
-load_path = "res://.godot/imported/GeoIcon.png-efc4cfb3b2e674b06baf7e40ef60fe06.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_00wwj"]
-atlas = SubResource("CompressedTexture2D_08dmc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_23xs7"]
+atlas = ExtResource("2_rqxu2")
 region = Rect2(0, 0, 60, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t6yk6"]
-atlas = SubResource("CompressedTexture2D_08dmc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_340u4"]
+atlas = ExtResource("2_rqxu2")
 region = Rect2(60, 0, 60, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_68ben"]
-atlas = SubResource("CompressedTexture2D_08dmc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_olk6a"]
+atlas = ExtResource("2_rqxu2")
 region = Rect2(0, 58, 60, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uni8i"]
-atlas = SubResource("CompressedTexture2D_08dmc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxsn3"]
+atlas = ExtResource("2_rqxu2")
 region = Rect2(60, 58, 60, 58)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_thh2j"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_i78uh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_00wwj")
+"texture": SubResource("AtlasTexture_23xs7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t6yk6")
+"texture": SubResource("AtlasTexture_340u4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_68ben")
+"texture": SubResource("AtlasTexture_olk6a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uni8i")
+"texture": SubResource("AtlasTexture_xxsn3")
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 13.3
 }]
 
 [node name="GeoCounter" type="Control" node_paths=PackedStringArray("geoIcon", "plusSign", "currentGeo", "addedGeo")]
@@ -76,7 +74,7 @@ layout_mode = 2
 
 [node name="GeoIcon" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/CenterContainer/Control"]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_thh2j")
+sprite_frames = SubResource("SpriteFrames_i78uh")
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
@@ -90,28 +88,27 @@ metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
 "output_section": true
 }
-metadata/_aseprite_wizard_source_file_hash_ = "c00e0e277cc25e828aabd1727a505443"
+metadata/_aseprite_wizard_source_file_hash_ = "cf8c0989d819e9b5facbcd5c04997aba"
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PlusSign" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/Control"]
+[node name="PlusSign" type="Label" parent="HBoxContainer/VBoxContainer/Control"]
 visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -32.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = 32.0
+offset_left = -40.0
+offset_bottom = 26.0
 grow_horizontal = 0
-size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource("2_fjf6g")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[center]+[/center]"
+theme_override_colors/font_color = Color(0.533333, 0.533333, 0.533333, 1)
+theme_override_fonts/font = ExtResource("2_fjf6g")
+theme_override_font_sizes/font_size = 38
+text = "+"
+horizontal_alignment = 2
+justification_flags = 0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -121,39 +118,35 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CurrentGeo" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2/Control"]
-clip_contents = false
-custom_minimum_size = Vector2(40, 40)
+[node name="CurrentGeo" type="Label" parent="HBoxContainer/VBoxContainer2/Control"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -29.0
-offset_top = -40.0
-offset_right = 29.0
-grow_horizontal = 2
+offset_left = 7.0
+offset_top = -39.0
+offset_right = 47.0
 grow_vertical = 0
-theme_override_fonts/normal_font = ExtResource("2_fjf6g")
-theme_override_font_sizes/normal_font_size = 38
-bbcode_enabled = true
+theme_override_fonts/font = ExtResource("2_fjf6g")
+theme_override_font_sizes/font_size = 38
 text = "0"
+justification_flags = 0
 
 [node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AddedGeo" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2/Control2"]
-clip_contents = false
-custom_minimum_size = Vector2(40, 40)
+[node name="AddedGeo" type="Label" parent="HBoxContainer/VBoxContainer2/Control2"]
+visible = false
 layout_mode = 1
-offset_right = 58.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("2_fjf6g")
-theme_override_font_sizes/normal_font_size = 38
-bbcode_enabled = true
+offset_left = 7.0
+offset_right = 47.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.533037, 0.533037, 0.533037, 1)
+theme_override_fonts/font = ExtResource("2_fjf6g")
+theme_override_font_sizes/font_size = 38
 text = "0"
+justification_flags = 0
 
 [node name="Timer" type="Timer" parent="HBoxContainer/VBoxContainer2/Control2/AddedGeo"]
 wait_time = 1.5
