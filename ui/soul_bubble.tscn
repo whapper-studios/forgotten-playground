@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqn4jkd8pa7cr"]
+
+[ext_resource type="Texture2D" uid="uid://datwlldrx87ub" path="res://assets/sprites/ui/HKSoulBubble.png" id="1_d5g5r"]
+
+[node name="SoulBubble" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 110.0
+offset_bottom = 110.0
+
+[node name="SoulBubbleContainer" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_d5g5r")
+
+[node name="SoulLevel" type="AnimatedSprite2D" parent="CenterContainer"]
