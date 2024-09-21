@@ -39,8 +39,7 @@ public partial class GeoCounter : Control
 	{
 		if (GeoToAdd == 0)
 		{
-			PlusSignLabel.Visible = true;
-			GeoToAddLabel.Visible = true;
+			PlusSignLabel.Text = "+";
 		}
 		GeoToAddLabel.Text = (GeoToAdd+newGeo).ToString();
 		GeoToAdd += newGeo;
@@ -55,7 +54,7 @@ public partial class GeoCounter : Control
 	{
 		if ((GeoToAdd-geoToTransfer)<0)
 		{
-			GeoToAddLabel.Text = "0";
+			GeoToAddLabel.Text = "";
 			CurrentGeoLabel.Text = (CurrentGeo+GeoToAdd).ToString();
 			GeoToAdd = 0;
 			CurrentGeo += GeoToAdd; // Account for possible rounding issue. 
@@ -74,8 +73,8 @@ public partial class GeoCounter : Control
 		}
 		else
 		{
-			PlusSignLabel.Visible = false;
-			GeoToAddLabel.Visible = false;
+			PlusSignLabel.Text = "";
+			GeoToAddLabel.Text = "";
 			GeoIcon.Stop();
 			return false;
 		} 

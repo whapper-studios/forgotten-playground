@@ -46,35 +46,29 @@ anchors_preset = 0
 offset_right = 120.0
 offset_bottom = 120.0
 script = ExtResource("1_n7brp")
-GeoIcon = NodePath("HBoxContainer/VBoxContainer/CenterContainer/Control/GeoIcon")
-PlusSignLabel = NodePath("HBoxContainer/VBoxContainer/Control/PlusSign")
-CurrentGeoLabel = NodePath("HBoxContainer/VBoxContainer2/Control/CurrentGeo")
-GeoToAddLabel = NodePath("HBoxContainer/VBoxContainer2/Control2/GeoToAdd")
+GeoIcon = NodePath("HBoxContainer/VBoxContainer/Control/GeoIcon")
+PlusSignLabel = NodePath("HBoxContainer/VBoxContainer/PlusSign")
+CurrentGeoLabel = NodePath("HBoxContainer/VBoxContainer2/MarginContainer/CurrentGeo")
+GeoToAddLabel = NodePath("HBoxContainer/VBoxContainer2/GeoToAdd")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+offset_right = 86.0
+offset_bottom = 120.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 58)
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/CenterContainer"]
-layout_mode = 2
-
-[node name="GeoIcon" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/CenterContainer/Control"]
+[node name="GeoIcon" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/Control"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i78uh")
+centered = false
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
@@ -90,23 +84,13 @@ metadata/_aseprite_wizard_interface_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "cf8c0989d819e9b5facbcd5c04997aba"
 
-[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
+[node name="PlusSign" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 58)
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="PlusSign" type="Label" parent="HBoxContainer/VBoxContainer/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 26.0
-grow_horizontal = 0
 theme_override_colors/font_color = Color(0.533333, 0.533333, 0.533333, 1)
 theme_override_fonts/font = ExtResource("2_fjf6g")
 theme_override_font_sizes/font_size = 38
-text = "+"
 horizontal_alignment = 2
 justification_flags = 0
 
@@ -114,43 +98,33 @@ justification_flags = 0
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="CurrentGeo" type="Label" parent="HBoxContainer/VBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(60, 58)
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="CurrentGeo" type="Label" parent="HBoxContainer/VBoxContainer2/Control"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -39.0
-offset_right = 47.0
-grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_fjf6g")
 theme_override_font_sizes/font_size = 38
 text = "0"
+vertical_alignment = 1
 justification_flags = 0
 
-[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer2"]
+[node name="GeoToAdd" type="Label" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(60, 58)
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="GeoToAdd" type="Label" parent="HBoxContainer/VBoxContainer2/Control2"]
-visible = false
-layout_mode = 1
-offset_left = 7.0
-offset_right = 47.0
-offset_bottom = 39.0
 theme_override_colors/font_color = Color(0.533037, 0.533037, 0.533037, 1)
 theme_override_fonts/font = ExtResource("2_fjf6g")
 theme_override_font_sizes/font_size = 38
-text = "0"
+vertical_alignment = 1
 justification_flags = 0
 
-[node name="Timer" type="Timer" parent="HBoxContainer/VBoxContainer2/Control2/GeoToAdd"]
+[node name="Timer" type="Timer" parent="HBoxContainer/VBoxContainer2/GeoToAdd"]
 wait_time = 1.5
 one_shot = true
 
 [connection signal="gui_input" from="." to="." method="OnGuiInput"]
-[connection signal="timeout" from="HBoxContainer/VBoxContainer2/Control2/GeoToAdd/Timer" to="." method="OnTimerTimeout"]
+[connection signal="timeout" from="HBoxContainer/VBoxContainer2/GeoToAdd/Timer" to="." method="OnTimerTimeout"]
