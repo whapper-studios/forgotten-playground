@@ -94,7 +94,8 @@ public partial class GeoCounter : Control
 		{
 			GeoIcon.Play();
 		}
-		else{
+		else
+		{
 			GeoIcon.Stop(); // Mainly just to reset to first frame
 		}
 	}
