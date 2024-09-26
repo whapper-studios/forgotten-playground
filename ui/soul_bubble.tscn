@@ -1,6 +1,64 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqn4jkd8pa7cr"]
+[gd_scene load_steps=11 format=3 uid="uid://dqn4jkd8pa7cr"]
 
 [ext_resource type="Texture2D" uid="uid://datwlldrx87ub" path="res://assets/sprites/ui/HKSoulBubble.png" id="1_d5g5r"]
+[ext_resource type="Texture2D" uid="uid://dg6tnqjj673ek" path="res://assets/sprites/ui/Soul orb waves.png" id="2_q7wx3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwfg1"]
+atlas = ExtResource("2_q7wx3")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q366y"]
+atlas = ExtResource("2_q7wx3")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3fmq"]
+atlas = ExtResource("2_q7wx3")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufjq4"]
+atlas = ExtResource("2_q7wx3")
+region = Rect2(0, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k4nq"]
+atlas = ExtResource("2_q7wx3")
+region = Rect2(200, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j1rp"]
+atlas = ExtResource("2_q7wx3")
+region = Rect2(400, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl1ir"]
+atlas = ExtResource("2_q7wx3")
+region = Rect2(0, 400, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6lte7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwfg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q366y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3fmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufjq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k4nq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j1rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl1ir")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="SoulBubble" type="Control"]
 layout_mode = 3
@@ -16,3 +74,19 @@ layout_mode = 2
 texture = ExtResource("1_d5g5r")
 
 [node name="SoulLevel" type="AnimatedSprite2D" parent="CenterContainer"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_6lte7")
+frame_progress = 0.597829
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets/sprites/ui",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/sprites/ui/Soul orb waves.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "6a57383119d49469ff845cad0d04131e"
