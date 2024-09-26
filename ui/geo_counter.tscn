@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=3 uid="uid://gp81uc6lq8xq"]
+
+[ext_resource type="Script" path="res://ui/GeoCounter.cs" id="1_n7brp"]
+[ext_resource type="FontFile" uid="uid://blx14g382wtdu" path="res://assets/fonts/Trajan Pro Regular.ttf" id="2_fjf6g"]
+[ext_resource type="Texture2D" uid="uid://c5f2pykyqiyao" path="res://assets/sprites/ui/GeoIcon.png" id="2_rqxu2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23xs7"]
+atlas = ExtResource("2_rqxu2")
+region = Rect2(0, 0, 60, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_340u4"]
+atlas = ExtResource("2_rqxu2")
+region = Rect2(60, 0, 60, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olk6a"]
+atlas = ExtResource("2_rqxu2")
+region = Rect2(0, 58, 60, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxsn3"]
+atlas = ExtResource("2_rqxu2")
+region = Rect2(60, 58, 60, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i78uh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23xs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_340u4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olk6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxsn3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.3
+}]
+
+[node name="GeoCounter" type="Control" node_paths=PackedStringArray("GeoIcon", "PlusSignLabel", "CurrentGeoLabel", "GeoToAddLabel")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 116.0
+scale = Vector2(2, 2)
+script = ExtResource("1_n7brp")
+GeoIcon = NodePath("HBoxContainer/VBoxContainer/Control/GeoIcon")
+PlusSignLabel = NodePath("HBoxContainer/VBoxContainer/PlusSign")
+CurrentGeoLabel = NodePath("HBoxContainer/VBoxContainer2/CurrentGeo")
+GeoToAddLabel = NodePath("HBoxContainer/VBoxContainer2/GeoToAdd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 120.0
+offset_bottom = 116.0
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 58)
+layout_mode = 2
+
+[node name="GeoIcon" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/Control"]
+sprite_frames = SubResource("SpriteFrames_i78uh")
+centered = false
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets/sprites/ui",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/sprites/ui/GeoIcon.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "cf8c0989d819e9b5facbcd5c04997aba"
+
+[node name="PlusSign" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 58)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.533333, 0.533333, 0.533333, 1)
+theme_override_fonts/font = ExtResource("2_fjf6g")
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 2
+justification_flags = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="CurrentGeo" type="Label" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(60, 58)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_fjf6g")
+theme_override_font_sizes/font_size = 38
+text = "0"
+vertical_alignment = 2
+justification_flags = 0
+
+[node name="GeoToAdd" type="Label" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(60, 58)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.533037, 0.533037, 0.533037, 1)
+theme_override_fonts/font = ExtResource("2_fjf6g")
+theme_override_font_sizes/font_size = 38
+justification_flags = 0
+
+[node name="Timer" type="Timer" parent="HBoxContainer/VBoxContainer2/GeoToAdd"]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="gui_input" from="." to="." method="OnGuiInput"]
+[connection signal="animation_finished" from="HBoxContainer/VBoxContainer/Control/GeoIcon" to="." method="OnGeoIconAnimationFinished"]
+[connection signal="timeout" from="HBoxContainer/VBoxContainer2/GeoToAdd/Timer" to="." method="OnTimerTimeout"]
