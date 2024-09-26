@@ -75,7 +75,6 @@ public partial class GeoCounter : Control
 		{
 			PlusSignLabel.Text = "";
 			GeoToAddLabel.Text = "";
-			GeoIcon.Stop();
 			return false;
 		} 
 	}
@@ -87,6 +86,17 @@ public partial class GeoCounter : Control
 		IsGeoTransferring = true;
 		GeoToAddChunkSize = GeoToAdd;
 		GeoIcon.Play();
+	}
+
+	public void OnGeoIconAnimationFinished()
+	{
+		if (IsGeoTransferring)
+		{
+			GeoIcon.Play();
+		}
+		else{
+			GeoIcon.Stop(); // Mainly just to reset to first frame
+		}
 	}
 
 	
