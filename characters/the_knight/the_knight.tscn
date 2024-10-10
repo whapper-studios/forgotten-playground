@@ -1,8 +1,9 @@
-[gd_scene load_steps=309 format=3 uid="uid://bdoq4iigy3ukq"]
+[gd_scene load_steps=310 format=3 uid="uid://bdoq4iigy3ukq"]
 
 [ext_resource type="Texture2D" uid="uid://ckpdlr5dqx7bt" path="res://assets/sprites/character/airborne.png" id="1_aalvt"]
 [ext_resource type="Texture2D" uid="uid://b83hiydxjrbbi" path="res://assets/sprites/character/dash.png" id="1_kc5dp"]
 [ext_resource type="Texture2D" uid="uid://hbp6xe6h57sy" path="res://assets/sprites/character/idle.png" id="1_ta6aq"]
+[ext_resource type="Script" path="res://characters/the_knight/TheKnight.cs" id="1_xvvwq"]
 [ext_resource type="Texture2D" uid="uid://l82rlcpc61ts" path="res://assets/sprites/character/down_slash.png" id="2_ctujd"]
 [ext_resource type="Texture2D" uid="uid://d3eorm8cvotip" path="res://assets/sprites/character/fall.png" id="2_gah7l"]
 [ext_resource type="Texture2D" uid="uid://br8n3h5hhgils" path="res://assets/sprites/character/dash_to_idle.png" id="3_xxpky"]
@@ -2105,6 +2106,7 @@ animations = [{
 size = Vector2(35, 92)
 
 [node name="Knight" type="CharacterBody2D"]
+script = ExtResource("1_xvvwq")
 
 [node name="KnightSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mbp45")
