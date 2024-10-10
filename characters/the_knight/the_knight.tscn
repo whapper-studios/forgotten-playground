@@ -48,6 +48,9 @@
 [ext_resource type="Texture2D" uid="uid://du5203ogf73v7" path="res://assets/sprites/character/wall_slash.png" id="44_jauc3"]
 [ext_resource type="Texture2D" uid="uid://dit18i8hm1sje" path="res://assets/sprites/character/wall_slide.png" id="45_gnv81"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sc67"]
+size = Vector2(35, 92)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_721ra"]
 atlas = ExtResource("1_aalvt")
 region = Rect2(0, 0, 103, 146)
@@ -2102,20 +2105,22 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sc67"]
-size = Vector2(35, 92)
-
-[node name="Knight" type="CharacterBody2D"]
+[node name="Knight" type="CharacterBody2D" node_paths=PackedStringArray("SpriteWrapper", "KnightSprite", "FrontSlashEffectSprite")]
 script = ExtResource("1_xvvwq")
-
-[node name="KnightSprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_mbp45")
-animation = &"idle"
-
-[node name="SlashEffectSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-78.5, 0)
-sprite_frames = SubResource("SpriteFrames_cdg2q")
+SpriteWrapper = NodePath("SpriteWrapper")
+KnightSprite = NodePath("SpriteWrapper/KnightSprite")
+FrontSlashEffectSprite = NodePath("SpriteWrapper/FrontSlashEffectSprite")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 17)
 shape = SubResource("RectangleShape2D_7sc67")
+
+[node name="SpriteWrapper" type="CanvasGroup" parent="."]
+
+[node name="KnightSprite" type="AnimatedSprite2D" parent="SpriteWrapper"]
+sprite_frames = SubResource("SpriteFrames_mbp45")
+animation = &"idle"
+
+[node name="FrontSlashEffectSprite" type="AnimatedSprite2D" parent="SpriteWrapper"]
+position = Vector2(-78.5, 0)
+sprite_frames = SubResource("SpriteFrames_cdg2q")
