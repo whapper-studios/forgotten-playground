@@ -135,7 +135,8 @@ mesh = SubResource("QuadMesh_g3mra")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Knight" parent="." instance=ExtResource("1_kcmxu")]
-position = Vector2(0, -70)
+position = Vector2(0, -1200)
+scale = Vector2(1.3, 1.3)
 
 [node name="Floor" type="Node2D" parent="."]
 

@@ -11,55 +11,91 @@ public partial class TheKnight : CharacterBody2D
   public AnimatedSprite2D FrontSlashEffectSprite;
 
   public const float WalkSpeed = 300f;
-  public const float RunSpeed = 400f;
+  public const float RunSpeed = 500f;
   public const float SprintSpeed = 500f;
-  public const float JumpVelocity = -400f;
+  public const float JumpVelocity = -800f;
 
   public override void _PhysicsProcess(double delta)
   {
     Vector2 velocity = Velocity;
 
-    // Add the gravity.
-    if (!IsOnFloor())
-    {
-      velocity += GetGravity() * (float)delta;
-    }
-
-    // Handle Jump.
-    if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-    {
-      velocity.Y = JumpVelocity;
-    }
-
-    // Get the input direction and handle the movement/deceleration.
-    // As good practice, you should replace UI actions with custom gameplay actions.
-    Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-    if (direction != Vector2.Zero)
-    {
-      velocity.X = direction.X * WalkSpeed;
-    }
-    else
-    {
-      velocity.X = Mathf.MoveToward(Velocity.X, 0, WalkSpeed);
-    }
+    velocity = UpdateVerticalMovement((float)delta, velocity);
+    velocity = UpdateHorizontalMovement(velocity);
+    HandleSpriteOrientation(velocity);
+    HandleSpriteAnimation(velocity);
 
     Velocity = velocity;
     MoveAndSlide();
   }
 
-  private void HandleHorizontalMovement()
-
-  private void HandleAnimationDirection(Vector2 velocity)
+  /// <summary>
+  /// Takes in a Vector of the current velocity and returns an updated Vector
+  /// with updates to the vertical velocity
+  /// </summary>
+  /// <param name="currentVelocity"></param>
+  /// <returns></returns>
+  private Vector2 UpdateVerticalMovement(float delta, Vector2 currentVelocity)
   {
-    
+    if(!IsOnFloor())
+    {
+      currentVelocity += GetGravity() * delta;
+    }
 
-    if (velocity.X < 0)
+    if (Input.IsActionJustPressed("jump") && IsOnFloor())
+      currentVelocity.Y = JumpVelocity;
+    
+    return currentVelocity;
+  }
+
+  /// <summary>
+  /// Takes in a Vector of the current velocity and returns an updated Vector
+  /// with updates to the horizontal movement
+  /// </summary>
+  /// <param name="currentVelocity"></param>
+  /// <returns></returns>
+  private Vector2 UpdateHorizontalMovement(Vector2 currentVelocity)
+  {
+    currentVelocity.X = 0;
+
+    if (Input.IsActionPressed("left"))
+      currentVelocity.X -= RunSpeed;
+    
+    if (Input.IsActionPressed("right"))
+      currentVelocity.X += RunSpeed;
+
+    return currentVelocity;
+  }
+
+  /// <summary>
+  /// Handles setting the sprite animation based on current actions
+  /// </summary>
+  /// <param name="currentVelocity"></param>
+  private void HandleSpriteAnimation(Vector2 currentVelocity)
+  {
+    if(IsOnFloor() && currentVelocity.X == 0)
+      KnightSprite.Play("idle");
+
+    if(IsOnFloor() && currentVelocity.X != 0) {
+      if(KnightSprite.Animation != "walk" && KnightSprite.Animation != "sprint")
+        KnightSprite.Play("sprint");
+      else if(!KnightSprite.IsPlaying()) 
+        KnightSprite.Play("walk");
+    }      
+  }
+
+  /// <summary>
+  /// Takes in the current velocity and handles flipping the sprite orientation when necessary
+  /// </summary>
+  /// <param name="currentVelocity"></param>
+  private void HandleSpriteOrientation(Vector2 currentVelocity)
+  {
+    if (currentVelocity.X < 0)
 		{
-			KnightSprite.FlipH = true;
+			SpriteWrapper.FlipH = false;
 		}
-		else if (velocity.X > 0)
+		else if (currentVelocity.X > 0)
 		{
-			KnightSprite.FlipH = false;
+			SpriteWrapper.FlipH = true;
 		}
   }
 }

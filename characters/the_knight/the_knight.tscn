@@ -2119,7 +2119,8 @@ shape = SubResource("RectangleShape2D_7sc67")
 
 [node name="KnightSprite" type="AnimatedSprite2D" parent="SpriteWrapper"]
 sprite_frames = SubResource("SpriteFrames_mbp45")
-animation = &"idle"
+animation = &"sprint"
+frame_progress = 0.8749
 
 [node name="FrontSlashEffectSprite" type="AnimatedSprite2D" parent="SpriteWrapper"]
 position = Vector2(-78.5, 0)
