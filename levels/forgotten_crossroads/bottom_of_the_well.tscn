@@ -132,8 +132,6 @@ shape = SubResource("RectangleShape2D_vg107")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Ceiling/RightSide"]
 mesh = SubResource("QuadMesh_g3mra")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Knight" parent="." instance=ExtResource("1_kcmxu")]
 position = Vector2(0, -1200)
 scale = Vector2(1.3, 1.3)

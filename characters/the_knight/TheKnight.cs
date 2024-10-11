@@ -8,12 +8,12 @@ public partial class TheKnight : CharacterBody2D
   [Export]
   public AnimatedSprite2D KnightSprite;
   [Export]
-  public AnimatedSprite2D FrontSlashEffectSprite;
+  public AnimatedSprite2D LeftSlashEffectSprite;
 
-  public const float WalkSpeed = 300f;
-  public const float RunSpeed = 500f;
-  public const float SprintSpeed = 500f;
-  public const float JumpVelocity = -800f;
+  public const float WalkSpeed = 600f;
+  public const float RunSpeed = 800f;
+  public const float SprintSpeed = 1000f;
+  public const float JumpVelocity = -1800f;
 
   public override void _PhysicsProcess(double delta)
   {
@@ -39,6 +39,9 @@ public partial class TheKnight : CharacterBody2D
     if(!IsOnFloor())
     {
       currentVelocity += GetGravity() * delta;
+
+      if(!Input.IsActionPressed("jump") && currentVelocity.Y < 0)
+        currentVelocity.Y = currentVelocity.Y/2;
     }
 
     if (Input.IsActionJustPressed("jump") && IsOnFloor())
@@ -72,15 +75,21 @@ public partial class TheKnight : CharacterBody2D
   /// <param name="currentVelocity"></param>
   private void HandleSpriteAnimation(Vector2 currentVelocity)
   {
-    if(IsOnFloor() && currentVelocity.X == 0)
-      KnightSprite.Play("idle");
-
-    if(IsOnFloor() && currentVelocity.X != 0) {
-      if(KnightSprite.Animation != "walk" && KnightSprite.Animation != "sprint")
-        KnightSprite.Play("sprint");
-      else if(!KnightSprite.IsPlaying()) 
-        KnightSprite.Play("walk");
-    }      
+    if(IsOnFloor())
+    {
+      if(currentVelocity.X == 0)
+        KnightSprite.Play("idle");
+      else if(KnightSprite.Animation != "run" && KnightSprite.Animation != "idle_to_run")
+        KnightSprite.Play("idle_to_run");
+      else if(!KnightSprite.IsPlaying())
+        KnightSprite.Play("run");
+    }
+    else {
+      if(KnightSprite.Animation != "fall" && KnightSprite.Animation != "airborne")
+        KnightSprite.Play("airborne");
+      else if(!KnightSprite.IsPlaying())
+        KnightSprite.Play("fall");
+    }
   }
 
   /// <summary>
@@ -91,11 +100,11 @@ public partial class TheKnight : CharacterBody2D
   {
     if (currentVelocity.X < 0)
 		{
-			SpriteWrapper.FlipH = false;
+			KnightSprite.FlipH = false;
 		}
 		else if (currentVelocity.X > 0)
 		{
-			SpriteWrapper.FlipH = true;
+			KnightSprite.FlipH = true;
 		}
   }
 }
